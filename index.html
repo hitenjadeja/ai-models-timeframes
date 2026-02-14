@@ -44,32 +44,44 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 1rem;
+            gap: 0.5rem;
             padding: 1rem;
             margin: 1rem auto;
-            max-width: 900px;
+            max-width: 1100px;
         }
 
         .legend-item {
             display: flex;
             align-items: center;
             gap: 0.5rem;
-            padding: 0.5rem 1rem;
+            padding: 0.4rem 0.8rem;
             background: rgba(255,255,255,0.1);
             border-radius: 20px;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
+            cursor: pointer;
+            user-select: none;
+            transition: opacity 0.2s, background 0.2s;
+        }
+
+        .legend-item:hover {
+            background: rgba(255,255,255,0.2);
+        }
+
+        .legend-item.hidden {
+            opacity: 0.35;
+            text-decoration: line-through;
         }
 
         .legend-color {
-            width: 16px;
-            height: 16px;
+            width: 14px;
+            height: 14px;
             border-radius: 4px;
         }
 
         #timeline {
             width: 95%;
             max-width: 1400px;
-            height: 700px;
+            height: 800px;
             margin: 1rem auto;
             background: rgba(255,255,255,0.95);
             border-radius: 12px;
@@ -93,9 +105,9 @@
 
         .instructions {
             text-align: center;
-            padding: 1rem;
+            padding: 0.5rem 1rem;
             color: #94a3b8;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
         }
 
         /* Company colors */
@@ -104,11 +116,16 @@
         .google { background-color: #4285f4 !important; border-color: #3367d6 !important; color: white !important; }
         .meta { background-color: #0668e1 !important; border-color: #0553b8 !important; color: white !important; }
         .mistral { background-color: #ff7000 !important; border-color: #e66300 !important; color: white !important; }
-        .deepmind { background-color: #4f46e5 !important; border-color: #4338ca !important; color: white !important; }
         .xai { background-color: #000000 !important; border-color: #333333 !important; color: white !important; }
         .deepseek { background-color: #0ea5e9 !important; border-color: #0284c7 !important; color: white !important; }
         .alibaba { background-color: #ff6a00 !important; border-color: #e65c00 !important; color: white !important; }
         .zhipu { background-color: #7c3aed !important; border-color: #6d28d9 !important; color: white !important; }
+        .microsoft { background-color: #00a4ef !important; border-color: #0078d4 !important; color: white !important; }
+        .moonshot { background-color: #e11d48 !important; border-color: #be123c !important; color: white !important; }
+        .cohere { background-color: #39d353 !important; border-color: #2da44e !important; color: white !important; }
+        .amazon { background-color: #ff9900 !important; border-color: #e68a00 !important; color: white !important; }
+        .bytedance { background-color: #0d9488 !important; border-color: #0f766e !important; color: white !important; }
+        .minimax { background-color: #c026d3 !important; border-color: #a21caf !important; color: white !important; }
         .other { background-color: #6b7280 !important; border-color: #4b5563 !important; color: white !important; }
 
         footer {
@@ -126,49 +143,73 @@
     </header>
 
     <div class="legend">
-        <div class="legend-item">
+        <div class="legend-item" data-group="openai">
             <div class="legend-color" style="background: #10a37f;"></div>
             <span>OpenAI</span>
         </div>
-        <div class="legend-item">
+        <div class="legend-item" data-group="anthropic">
             <div class="legend-color" style="background: #d97706;"></div>
             <span>Anthropic</span>
         </div>
-        <div class="legend-item">
+        <div class="legend-item" data-group="google">
             <div class="legend-color" style="background: #4285f4;"></div>
             <span>Google</span>
         </div>
-        <div class="legend-item">
+        <div class="legend-item" data-group="meta">
             <div class="legend-color" style="background: #0668e1;"></div>
             <span>Meta</span>
         </div>
-        <div class="legend-item">
+        <div class="legend-item" data-group="mistral">
             <div class="legend-color" style="background: #ff7000;"></div>
             <span>Mistral</span>
         </div>
-        <div class="legend-item">
+        <div class="legend-item" data-group="xai">
             <div class="legend-color" style="background: #000000;"></div>
             <span>xAI</span>
         </div>
-        <div class="legend-item">
+        <div class="legend-item" data-group="deepseek">
             <div class="legend-color" style="background: #0ea5e9;"></div>
             <span>DeepSeek</span>
         </div>
-        <div class="legend-item">
+        <div class="legend-item" data-group="alibaba">
             <div class="legend-color" style="background: #ff6a00;"></div>
             <span>Alibaba</span>
         </div>
-        <div class="legend-item">
+        <div class="legend-item" data-group="zhipu">
             <div class="legend-color" style="background: #7c3aed;"></div>
             <span>Zhipu</span>
         </div>
-        <div class="legend-item">
+        <div class="legend-item" data-group="microsoft">
+            <div class="legend-color" style="background: #00a4ef;"></div>
+            <span>Microsoft</span>
+        </div>
+        <div class="legend-item" data-group="moonshot">
+            <div class="legend-color" style="background: #e11d48;"></div>
+            <span>Moonshot</span>
+        </div>
+        <div class="legend-item" data-group="cohere">
+            <div class="legend-color" style="background: #39d353;"></div>
+            <span>Cohere</span>
+        </div>
+        <div class="legend-item" data-group="amazon">
+            <div class="legend-color" style="background: #ff9900;"></div>
+            <span>Amazon</span>
+        </div>
+        <div class="legend-item" data-group="bytedance">
+            <div class="legend-color" style="background: #0d9488;"></div>
+            <span>ByteDance</span>
+        </div>
+        <div class="legend-item" data-group="minimax">
+            <div class="legend-color" style="background: #c026d3;"></div>
+            <span>MiniMax</span>
+        </div>
+        <div class="legend-item" data-group="other">
             <div class="legend-color" style="background: #6b7280;"></div>
             <span>Other</span>
         </div>
     </div>
 
-    <p class="instructions">Scroll to zoom • Drag to pan • Click items for details</p>
+    <p class="instructions">Click legend items to filter &bull; Scroll to zoom &bull; Drag to pan &bull; Click items for details</p>
 
     <div id="timeline"></div>
 
@@ -188,12 +229,18 @@
             { id: 'deepseek', content: 'DeepSeek', className: 'deepseek' },
             { id: 'alibaba', content: 'Alibaba', className: 'alibaba' },
             { id: 'zhipu', content: 'Zhipu', className: 'zhipu' },
+            { id: 'microsoft', content: 'Microsoft', className: 'microsoft' },
+            { id: 'moonshot', content: 'Moonshot', className: 'moonshot' },
+            { id: 'cohere', content: 'Cohere', className: 'cohere' },
+            { id: 'amazon', content: 'Amazon', className: 'amazon' },
+            { id: 'bytedance', content: 'ByteDance', className: 'bytedance' },
+            { id: 'minimax', content: 'MiniMax', className: 'minimax' },
             { id: 'other', content: 'Other', className: 'other' }
         ]);
 
-        // Define AI models with release dates
-        const items = new vis.DataSet([
-            // OpenAI (2020-2025)
+        // All model items
+        const allItems = [
+            // OpenAI (2020-2026)
             { id: 1, content: 'GPT-3', start: '2020-05-28', group: 'openai', className: 'openai', title: 'GPT-3 (175B parameters)\nMay 28, 2020' },
             { id: 2, content: 'ChatGPT / GPT-3.5', start: '2022-11-30', group: 'openai', className: 'openai', title: 'ChatGPT & GPT-3.5\nNovember 30, 2022' },
             { id: 3, content: 'GPT-4', start: '2023-03-14', group: 'openai', className: 'openai', title: 'GPT-4 (Multimodal)\nMarch 14, 2023' },
@@ -224,7 +271,7 @@
             { id: 19, content: 'Claude 4.5 Opus', start: '2025-11-24', group: 'anthropic', className: 'anthropic', title: 'Claude 4.5 Opus\nNovember 24, 2025' },
             { id: 108, content: 'Claude Opus 4.6', start: '2026-02-05', group: 'anthropic', className: 'anthropic', title: 'Claude Opus 4.6 (Agent teams, 1M context)\nFebruary 5, 2026' },
 
-            // Google (2020-2025)
+            // Google (2020-2026)
             { id: 20, content: 'Meena', start: '2020-01-28', group: 'google', className: 'google', title: 'Meena (2.6B parameters)\nJanuary 2020' },
             { id: 21, content: 'LaMDA', start: '2021-05-18', group: 'google', className: 'google', title: 'LaMDA (137B parameters)\nMay 2021' },
             { id: 22, content: 'PaLM', start: '2022-04-04', group: 'google', className: 'google', title: 'PaLM (540B parameters)\nApril 2022' },
@@ -232,8 +279,10 @@
             { id: 24, content: 'PaLM 2', start: '2023-05-10', group: 'google', className: 'google', title: 'PaLM 2\nMay 10, 2023' },
             { id: 25, content: 'Gemini 1.0', start: '2023-12-06', group: 'google', className: 'google', title: 'Gemini 1.0 (Pro, Ultra, Nano)\nDecember 6, 2023' },
             { id: 26, content: 'Gemini 1.5 Pro', start: '2024-02-15', group: 'google', className: 'google', title: 'Gemini 1.5 Pro (1M context)\nFebruary 15, 2024' },
+            { id: 127, content: 'Gemma 2', start: '2024-06-27', group: 'google', className: 'google', title: 'Gemma 2 (2B-27B, Open source)\nJune 27, 2024' },
             { id: 27, content: 'Gemini 2.0 Flash', start: '2025-01-30', group: 'google', className: 'google', title: 'Gemini 2.0 Flash\nJanuary 30, 2025' },
             { id: 28, content: 'Gemini 2.0 Pro', start: '2025-02-05', group: 'google', className: 'google', title: 'Gemini 2.0 Pro\nFebruary 5, 2025' },
+            { id: 128, content: 'Gemma 3', start: '2025-03-12', group: 'google', className: 'google', title: 'Gemma 3 (1B-27B, Multimodal)\nMarch 12, 2025' },
             { id: 29, content: 'Gemini 2.5 Pro', start: '2025-03-25', group: 'google', className: 'google', title: 'Gemini 2.5 Pro (Thinking model)\nMarch 25, 2025' },
             { id: 103, content: 'Gemini 2.5 GA', start: '2025-06-17', group: 'google', className: 'google', title: 'Gemini 2.5 Pro & Flash GA\nJune 17, 2025' },
             { id: 104, content: 'Gemini 3.0', start: '2025-11-18', group: 'google', className: 'google', title: 'Gemini 3.0 Pro & Deep Think\nNovember 18, 2025' },
@@ -257,9 +306,12 @@
             { id: 42, content: 'Mistral Large', start: '2024-02-26', group: 'mistral', className: 'mistral', title: 'Mistral Large\nFebruary 26, 2024' },
             { id: 43, content: 'Mixtral 8x22B', start: '2024-04-17', group: 'mistral', className: 'mistral', title: 'Mixtral 8x22B\nApril 17, 2024' },
             { id: 44, content: 'Mistral Large 2', start: '2024-07-24', group: 'mistral', className: 'mistral', title: 'Mistral Large 2 (123B)\nJuly 24, 2024' },
+            { id: 129, content: 'Pixtral Large', start: '2024-11-18', group: 'mistral', className: 'mistral', title: 'Pixtral Large (124B, Multimodal)\nNovember 18, 2024' },
             { id: 112, content: 'Codestral 25.01', start: '2025-01-13', group: 'mistral', className: 'mistral', title: 'Codestral 25.01 (Code, 256K context)\nJanuary 13, 2025' },
             { id: 113, content: 'Mistral Small 3', start: '2025-01-30', group: 'mistral', className: 'mistral', title: 'Mistral Small 3 (24B, Open source)\nJanuary 30, 2025' },
             { id: 45, content: 'Mistral Medium 3', start: '2025-05-15', group: 'mistral', className: 'mistral', title: 'Mistral Medium 3\nMay 2025' },
+            { id: 131, content: 'Magistral', start: '2025-06-10', group: 'mistral', className: 'mistral', title: 'Magistral Small & Medium (Reasoning)\nJune 10, 2025' },
+            { id: 132, content: 'Devstral', start: '2025-07-10', group: 'mistral', className: 'mistral', title: 'Devstral (Code agent)\nJuly 10, 2025' },
             { id: 46, content: 'Codestral 25.08', start: '2025-08-01', group: 'mistral', className: 'mistral', title: 'Codestral 25.08 (Code specialist)\nAugust 1, 2025' },
             { id: 47, content: 'Mistral 3', start: '2025-12-02', group: 'mistral', className: 'mistral', title: 'Mistral 3 (675B MoE, Frontier)\nDecember 2, 2025' },
 
@@ -277,6 +329,7 @@
             { id: 81, content: 'DeepSeek V3', start: '2024-12-26', group: 'deepseek', className: 'deepseek', title: 'DeepSeek V3 (671B MoE)\nDecember 26, 2024' },
             { id: 82, content: 'DeepSeek R1', start: '2025-01-20', group: 'deepseek', className: 'deepseek', title: 'DeepSeek R1 (Reasoning, 671B)\nJanuary 20, 2025' },
             { id: 116, content: 'DeepSeek V3 0324', start: '2025-03-24', group: 'deepseek', className: 'deepseek', title: 'DeepSeek V3 0324 (685B, MIT License)\nMarch 24, 2025' },
+            { id: 133, content: 'DeepSeek R1 0528', start: '2025-05-28', group: 'deepseek', className: 'deepseek', title: 'DeepSeek R1 0528 (Reasoning update)\nMay 28, 2025' },
             { id: 117, content: 'DeepSeek V3.2', start: '2025-12-01', group: 'deepseek', className: 'deepseek', title: 'DeepSeek V3.2 (Reasoning, IMO Gold)\nDecember 1, 2025' },
 
             // Alibaba / Qwen (2023-2026)
@@ -294,14 +347,43 @@
             { id: 125, content: 'GLM-4.7', start: '2025-12-22', group: 'zhipu', className: 'zhipu', title: 'GLM-4.7 (400B, Coding)\nDecember 22, 2025' },
             { id: 126, content: 'GLM-5', start: '2026-02-11', group: 'zhipu', className: 'zhipu', title: 'GLM-5 (745B MoE, Open source)\nFebruary 11, 2026' },
 
+            // Microsoft (2024-2025)
+            { id: 134, content: 'Phi-3', start: '2024-04-23', group: 'microsoft', className: 'microsoft', title: 'Phi-3 (3.8B-14B, SLM)\nApril 23, 2024' },
+            { id: 135, content: 'Phi-4', start: '2024-12-12', group: 'microsoft', className: 'microsoft', title: 'Phi-4 (14B, Reasoning)\nDecember 12, 2024' },
+
+            // Moonshot AI / Kimi (2025-2026)
+            { id: 136, content: 'Kimi K2', start: '2025-07-11', group: 'moonshot', className: 'moonshot', title: 'Kimi K2 (1T MoE, Open source)\nJuly 11, 2025' },
+            { id: 137, content: 'Kimi K2.5', start: '2026-01-27', group: 'moonshot', className: 'moonshot', title: 'Kimi K2.5 (Multimodal, Open source)\nJanuary 27, 2026' },
+
+            // Cohere (2024-2025)
+            { id: 138, content: 'Command R+', start: '2024-04-04', group: 'cohere', className: 'cohere', title: 'Command R+ (Enterprise RAG)\nApril 4, 2024' },
+            { id: 139, content: 'Command A', start: '2025-03-13', group: 'cohere', className: 'cohere', title: 'Command A (111B, 256K context)\nMarch 13, 2025' },
+
+            // Amazon (2024-2025)
+            { id: 140, content: 'Amazon Nova', start: '2024-12-03', group: 'amazon', className: 'amazon', title: 'Amazon Nova (Micro, Lite, Pro)\nDecember 3, 2024' },
+            { id: 141, content: 'Amazon Nova 2', start: '2025-12-02', group: 'amazon', className: 'amazon', title: 'Amazon Nova 2 (Reasoning, Voice)\nDecember 2, 2025' },
+
+            // ByteDance (2025-2026)
+            { id: 142, content: 'Doubao 1.5 Pro', start: '2025-01-22', group: 'bytedance', className: 'bytedance', title: 'Doubao 1.5 Pro (Deep thinking)\nJanuary 22, 2025' },
+            { id: 143, content: 'Doubao 2.0', start: '2026-02-14', group: 'bytedance', className: 'bytedance', title: 'Doubao 2.0\nFebruary 14, 2026' },
+
+            // MiniMax (2025-2026)
+            { id: 144, content: 'MiniMax-M1', start: '2025-06-01', group: 'minimax', className: 'minimax', title: 'MiniMax-M1 (Hybrid attention, Open source)\nJune 2025' },
+            { id: 145, content: 'MiniMax-M2', start: '2025-10-01', group: 'minimax', className: 'minimax', title: 'MiniMax-M2 (Top-ranked open model)\nOctober 2025' },
+            { id: 146, content: 'MiniMax-M2.5', start: '2026-02-12', group: 'minimax', className: 'minimax', title: 'MiniMax-M2.5 (Near Claude Sonnet-level)\nFebruary 12, 2026' },
+
             // Other Notable Models
             { id: 60, content: 'GPT-J', start: '2021-06-09', group: 'other', className: 'other', title: 'GPT-J (6B) - EleutherAI\nJune 2021' },
             { id: 61, content: 'Jurassic-1', start: '2021-08-11', group: 'other', className: 'other', title: 'Jurassic-1 (178B) - AI21 Labs\nAugust 2021' },
             { id: 62, content: 'BLOOM', start: '2022-07-11', group: 'other', className: 'other', title: 'BLOOM (176B) - BigScience\nJuly 2022' },
             { id: 63, content: 'Falcon', start: '2023-05-25', group: 'other', className: 'other', title: 'Falcon (40B) - TII\nMay 2023' },
             { id: 64, content: 'Gopher', start: '2021-12-08', group: 'other', className: 'other', title: 'Gopher (280B) - DeepMind\nDecember 2021' },
-            { id: 65, content: 'Chinchilla', start: '2022-03-29', group: 'other', className: 'other', title: 'Chinchilla (70B) - DeepMind\nMarch 2022' }
-        ]);
+            { id: 65, content: 'Chinchilla', start: '2022-03-29', group: 'other', className: 'other', title: 'Chinchilla (70B) - DeepMind\nMarch 2022' },
+            { id: 147, content: 'DBRX', start: '2024-03-27', group: 'other', className: 'other', title: 'DBRX (132B MoE) - Databricks\nMarch 27, 2024' },
+            { id: 148, content: 'Nemotron 3 Nano', start: '2025-12-15', group: 'other', className: 'other', title: 'Nemotron 3 Nano (Hybrid MoE) - NVIDIA\nDecember 15, 2025' }
+        ];
+
+        const items = new vis.DataSet(allItems);
 
         // Configuration options
         const options = {
@@ -319,7 +401,7 @@
                 overflowMethod: 'cap'
             },
             groupOrder: function(a, b) {
-                const order = ['openai', 'anthropic', 'google', 'meta', 'mistral', 'xai', 'deepseek', 'alibaba', 'zhipu', 'other'];
+                const order = ['openai', 'anthropic', 'google', 'meta', 'mistral', 'xai', 'deepseek', 'alibaba', 'zhipu', 'microsoft', 'moonshot', 'cohere', 'amazon', 'bytedance', 'minimax', 'other'];
                 return order.indexOf(a.id) - order.indexOf(b.id);
             }
         };
@@ -328,11 +410,34 @@
         const container = document.getElementById('timeline');
         const timeline = new vis.Timeline(container, items, groups, options);
 
+        // Legend filtering
+        const hiddenGroups = new Set();
+
+        document.querySelectorAll('.legend-item').forEach(function(el) {
+            el.addEventListener('click', function() {
+                const groupId = this.dataset.group;
+                if (hiddenGroups.has(groupId)) {
+                    hiddenGroups.delete(groupId);
+                    this.classList.remove('hidden');
+                } else {
+                    hiddenGroups.add(groupId);
+                    this.classList.add('hidden');
+                }
+
+                // Filter items: only show items whose group is not hidden
+                const filtered = allItems.filter(function(item) {
+                    return !hiddenGroups.has(item.group);
+                });
+                items.clear();
+                items.add(filtered);
+            });
+        });
+
         // Add click handler for item details
         timeline.on('select', function(properties) {
             if (properties.items.length > 0) {
                 const item = items.get(properties.items[0]);
-                console.log('Selected:', item.content, '-', item.title);
+                if (item) console.log('Selected:', item.content, '-', item.title);
             }
         });
     </script>
