@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Models Timeline (2020-2026)</title>
+    <script src="https://unpkg.com/vis-timeline@7.7.3/standalone/umd/vis-timeline-graph2d.min.js"></script>
+    <link href="https://unpkg.com/vis-timeline@7.7.3/styles/vis-timeline-graph2d.min.css" rel="stylesheet" type="text/css" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            min-height: 100vh;
+            color: #fff;
+        }
+
+        header {
+            text-align: center;
+            padding: 2rem 1rem;
+            background: rgba(0,0,0,0.3);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(90deg, #00d4ff, #7c3aed, #f472b6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .subtitle {
+            color: #94a3b8;
+            font-size: 1.1rem;
+        }
+
+        .legend {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+            padding: 1rem;
+            margin: 1rem auto;
+            max-width: 900px;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            background: rgba(255,255,255,0.1);
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+
+        .legend-color {
+            width: 16px;
+            height: 16px;
+            border-radius: 4px;
+        }
+
+        #timeline {
+            width: 95%;
+            max-width: 1400px;
+            height: 700px;
+            margin: 1rem auto;
+            background: rgba(255,255,255,0.95);
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+
+        .vis-item {
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        .vis-item.vis-selected {
+            box-shadow: 0 0 0 3px rgba(255,255,255,0.5);
+        }
+
+        .vis-label {
+            font-weight: 600;
+            font-size: 13px;
+        }
+
+        .instructions {
+            text-align: center;
+            padding: 1rem;
+            color: #94a3b8;
+            font-size: 0.9rem;
+        }
+
+        /* Company colors */
+        .openai { background-color: #10a37f !important; border-color: #0d8a6a !important; color: white !important; }
+        .anthropic { background-color: #d97706 !important; border-color: #b45309 !important; color: white !important; }
+        .google { background-color: #4285f4 !important; border-color: #3367d6 !important; color: white !important; }
+        .meta { background-color: #0668e1 !important; border-color: #0553b8 !important; color: white !important; }
+        .mistral { background-color: #ff7000 !important; border-color: #e66300 !important; color: white !important; }
+        .deepmind { background-color: #4f46e5 !important; border-color: #4338ca !important; color: white !important; }
+        .xai { background-color: #000000 !important; border-color: #333333 !important; color: white !important; }
+        .deepseek { background-color: #0ea5e9 !important; border-color: #0284c7 !important; color: white !important; }
+        .alibaba { background-color: #ff6a00 !important; border-color: #e65c00 !important; color: white !important; }
+        .other { background-color: #6b7280 !important; border-color: #4b5563 !important; color: white !important; }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: #64748b;
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>AI Language Models Timeline</h1>
+        <p class="subtitle">Major releases from 2020 to 2026</p>
+    </header>
+
+    <div class="legend">
+        <div class="legend-item">
+            <div class="legend-color" style="background: #10a37f;"></div>
+            <span>OpenAI</span>
+        </div>
+        <div class="legend-item">
+            <div class="legend-color" style="background: #d97706;"></div>
+            <span>Anthropic</span>
+        </div>
+        <div class="legend-item">
+            <div class="legend-color" style="background: #4285f4;"></div>
+            <span>Google</span>
+        </div>
+        <div class="legend-item">
+            <div class="legend-color" style="background: #0668e1;"></div>
+            <span>Meta</span>
+        </div>
+        <div class="legend-item">
+            <div class="legend-color" style="background: #ff7000;"></div>
+            <span>Mistral</span>
+        </div>
+        <div class="legend-item">
+            <div class="legend-color" style="background: #000000;"></div>
+            <span>xAI</span>
+        </div>
+        <div class="legend-item">
+            <div class="legend-color" style="background: #0ea5e9;"></div>
+            <span>DeepSeek</span>
+        </div>
+        <div class="legend-item">
+            <div class="legend-color" style="background: #ff6a00;"></div>
+            <span>Alibaba</span>
+        </div>
+        <div class="legend-item">
+            <div class="legend-color" style="background: #6b7280;"></div>
+            <span>Other</span>
+        </div>
+    </div>
+
+    <p class="instructions">Scroll to zoom • Drag to pan • Click items for details</p>
+
+    <div id="timeline"></div>
+
+    <footer>
+        Data compiled from public announcements and documentation. Last updated: February 2026.
+    </footer>
+
+    <script>
+        // Define company groups
+        const groups = new vis.DataSet([
+            { id: 'openai', content: 'OpenAI', className: 'openai' },
+            { id: 'anthropic', content: 'Anthropic', className: 'anthropic' },
+            { id: 'google', content: 'Google', className: 'google' },
+            { id: 'meta', content: 'Meta', className: 'meta' },
+            { id: 'mistral', content: 'Mistral', className: 'mistral' },
+            { id: 'xai', content: 'xAI', className: 'xai' },
+            { id: 'deepseek', content: 'DeepSeek', className: 'deepseek' },
+            { id: 'alibaba', content: 'Alibaba', className: 'alibaba' },
+            { id: 'other', content: 'Other', className: 'other' }
+        ]);
+
+        // Define AI models with release dates
+        const items = new vis.DataSet([
+            // OpenAI (2020-2025)
+            { id: 1, content: 'GPT-3', start: '2020-05-28', group: 'openai', className: 'openai', title: 'GPT-3 (175B parameters)\nMay 28, 2020' },
+            { id: 2, content: 'ChatGPT / GPT-3.5', start: '2022-11-30', group: 'openai', className: 'openai', title: 'ChatGPT & GPT-3.5\nNovember 30, 2022' },
+            { id: 3, content: 'GPT-4', start: '2023-03-14', group: 'openai', className: 'openai', title: 'GPT-4 (Multimodal)\nMarch 14, 2023' },
+            { id: 4, content: 'GPT-4 Turbo', start: '2023-11-06', group: 'openai', className: 'openai', title: 'GPT-4 Turbo (128K context)\nNovember 6, 2023' },
+            { id: 5, content: 'GPT-4o', start: '2024-05-13', group: 'openai', className: 'openai', title: 'GPT-4o (Omni)\nMay 13, 2024' },
+            { id: 105, content: 'GPT-4o mini', start: '2024-07-18', group: 'openai', className: 'openai', title: 'GPT-4o mini (Cost-efficient)\nJuly 18, 2024' },
+            { id: 6, content: 'o1 / o1-mini', start: '2024-09-12', group: 'openai', className: 'openai', title: 'o1 & o1-mini (Reasoning models)\nSeptember 12, 2024' },
+            { id: 7, content: 'o3-mini', start: '2025-01-31', group: 'openai', className: 'openai', title: 'o3-mini (Compact reasoning)\nJanuary 31, 2025' },
+            { id: 106, content: 'GPT-4.1', start: '2025-04-14', group: 'openai', className: 'openai', title: 'GPT-4.1 (1M context)\nApril 14, 2025' },
+            { id: 8, content: 'o3 / o4-mini', start: '2025-04-16', group: 'openai', className: 'openai', title: 'o3 & o4-mini (Advanced reasoning)\nApril 16, 2025' },
+            { id: 9, content: 'o3-pro', start: '2025-06-10', group: 'openai', className: 'openai', title: 'o3-pro (Highest performance)\nJune 10, 2025' },
+            { id: 100, content: 'GPT-5', start: '2025-08-07', group: 'openai', className: 'openai', title: 'GPT-5\nAugust 7, 2025' },
+            { id: 101, content: 'GPT-5.1', start: '2025-11-07', group: 'openai', className: 'openai', title: 'GPT-5.1\nNovember 2025' },
+            { id: 102, content: 'GPT-5.2', start: '2025-12-11', group: 'openai', className: 'openai', title: 'GPT-5.2\nDecember 11, 2025' },
+            { id: 120, content: 'GPT-5.3 Codex', start: '2026-02-05', group: 'openai', className: 'openai', title: 'GPT-5.3 Codex (Agentic coding)\nFebruary 5, 2026' },
+
+            // Anthropic (2023-2026)
+            { id: 10, content: 'Claude 1.0', start: '2023-03-14', group: 'anthropic', className: 'anthropic', title: 'Claude 1.0\nMarch 14, 2023' },
+            { id: 11, content: 'Claude 2.0', start: '2023-07-11', group: 'anthropic', className: 'anthropic', title: 'Claude 2.0\nJuly 11, 2023' },
+            { id: 12, content: 'Claude 2.1', start: '2023-11-21', group: 'anthropic', className: 'anthropic', title: 'Claude 2.1 (200K context)\nNovember 21, 2023' },
+            { id: 13, content: 'Claude 3', start: '2024-03-04', group: 'anthropic', className: 'anthropic', title: 'Claude 3 (Opus, Sonnet, Haiku)\nMarch 4, 2024' },
+            { id: 14, content: 'Claude 3.5 Sonnet', start: '2024-06-20', group: 'anthropic', className: 'anthropic', title: 'Claude 3.5 Sonnet\nJune 20, 2024' },
+            { id: 15, content: 'Claude 3.5 Haiku', start: '2024-10-22', group: 'anthropic', className: 'anthropic', title: 'Claude 3.5 Haiku + Computer Use\nOctober 22, 2024' },
+            { id: 107, content: 'Claude 3.7 Sonnet', start: '2025-02-24', group: 'anthropic', className: 'anthropic', title: 'Claude 3.7 Sonnet (Extended thinking)\nFebruary 24, 2025' },
+            { id: 16, content: 'Claude 4', start: '2025-05-22', group: 'anthropic', className: 'anthropic', title: 'Claude 4 (Sonnet & Opus)\nMay 22, 2025' },
+            { id: 17, content: 'Claude 4.5 Sonnet', start: '2025-09-29', group: 'anthropic', className: 'anthropic', title: 'Claude 4.5 Sonnet\nSeptember 29, 2025' },
+            { id: 18, content: 'Claude 4.5 Haiku', start: '2025-10-15', group: 'anthropic', className: 'anthropic', title: 'Claude 4.5 Haiku\nOctober 2025' },
+            { id: 19, content: 'Claude 4.5 Opus', start: '2025-11-24', group: 'anthropic', className: 'anthropic', title: 'Claude 4.5 Opus\nNovember 24, 2025' },
+            { id: 108, content: 'Claude Opus 4.6', start: '2026-02-05', group: 'anthropic', className: 'anthropic', title: 'Claude Opus 4.6 (Agent teams, 1M context)\nFebruary 5, 2026' },
+
+            // Google (2020-2025)
+            { id: 20, content: 'Meena', start: '2020-01-28', group: 'google', className: 'google', title: 'Meena (2.6B parameters)\nJanuary 2020' },
+            { id: 21, content: 'LaMDA', start: '2021-05-18', group: 'google', className: 'google', title: 'LaMDA (137B parameters)\nMay 2021' },
+            { id: 22, content: 'PaLM', start: '2022-04-04', group: 'google', className: 'google', title: 'PaLM (540B parameters)\nApril 2022' },
+            { id: 23, content: 'Bard', start: '2023-03-21', group: 'google', className: 'google', title: 'Bard (LaMDA-based)\nMarch 21, 2023' },
+            { id: 24, content: 'PaLM 2', start: '2023-05-10', group: 'google', className: 'google', title: 'PaLM 2\nMay 10, 2023' },
+            { id: 25, content: 'Gemini 1.0', start: '2023-12-06', group: 'google', className: 'google', title: 'Gemini 1.0 (Pro, Ultra, Nano)\nDecember 6, 2023' },
+            { id: 26, content: 'Gemini 1.5 Pro', start: '2024-02-15', group: 'google', className: 'google', title: 'Gemini 1.5 Pro (1M context)\nFebruary 15, 2024' },
+            { id: 27, content: 'Gemini 2.0 Flash', start: '2025-01-30', group: 'google', className: 'google', title: 'Gemini 2.0 Flash\nJanuary 30, 2025' },
+            { id: 28, content: 'Gemini 2.0 Pro', start: '2025-02-05', group: 'google', className: 'google', title: 'Gemini 2.0 Pro\nFebruary 5, 2025' },
+            { id: 29, content: 'Gemini 2.5 Pro', start: '2025-03-25', group: 'google', className: 'google', title: 'Gemini 2.5 Pro (Thinking model)\nMarch 25, 2025' },
+            { id: 103, content: 'Gemini 2.5 GA', start: '2025-06-17', group: 'google', className: 'google', title: 'Gemini 2.5 Pro & Flash GA\nJune 17, 2025' },
+            { id: 104, content: 'Gemini 3.0', start: '2025-11-18', group: 'google', className: 'google', title: 'Gemini 3.0 Pro & Deep Think\nNovember 18, 2025' },
+            { id: 109, content: 'Gemini 3 Flash', start: '2025-12-17', group: 'google', className: 'google', title: 'Gemini 3 Flash\nDecember 17, 2025' },
+            { id: 121, content: 'Gemini 3 Deep Think', start: '2026-02-12', group: 'google', className: 'google', title: 'Gemini 3 Deep Think (Science & research upgrade)\nFebruary 12, 2026' },
+
+            // Meta (2020-2025)
+            { id: 30, content: 'BlenderBot', start: '2020-04-29', group: 'meta', className: 'meta', title: 'BlenderBot 1.0\nApril 2020' },
+            { id: 31, content: 'OPT-175B', start: '2022-05-03', group: 'meta', className: 'meta', title: 'OPT-175B (Open source)\nMay 2022' },
+            { id: 32, content: 'LLaMA', start: '2023-02-24', group: 'meta', className: 'meta', title: 'LLaMA (7B-65B)\nFebruary 24, 2023' },
+            { id: 33, content: 'Llama 2', start: '2023-07-18', group: 'meta', className: 'meta', title: 'Llama 2 (7B-70B, Open source)\nJuly 18, 2023' },
+            { id: 34, content: 'Llama 3', start: '2024-04-18', group: 'meta', className: 'meta', title: 'Llama 3 (8B, 70B)\nApril 18, 2024' },
+            { id: 35, content: 'Llama 3.1', start: '2024-07-23', group: 'meta', className: 'meta', title: 'Llama 3.1 (8B, 70B, 405B)\nJuly 23, 2024' },
+            { id: 110, content: 'Llama 3.2', start: '2024-09-25', group: 'meta', className: 'meta', title: 'Llama 3.2 (1B-90B, Multimodal)\nSeptember 25, 2024' },
+            { id: 111, content: 'Llama 3.3', start: '2024-12-06', group: 'meta', className: 'meta', title: 'Llama 3.3 (70B)\nDecember 6, 2024' },
+            { id: 36, content: 'Llama 4', start: '2025-04-05', group: 'meta', className: 'meta', title: 'Llama 4 (Scout & Maverick)\nApril 5, 2025' },
+
+            // Mistral (2023-2025)
+            { id: 40, content: 'Mistral 7B', start: '2023-09-27', group: 'mistral', className: 'mistral', title: 'Mistral 7B (Open source)\nSeptember 27, 2023' },
+            { id: 41, content: 'Mixtral 8x7B', start: '2023-12-11', group: 'mistral', className: 'mistral', title: 'Mixtral 8x7B (MoE)\nDecember 11, 2023' },
+            { id: 42, content: 'Mistral Large', start: '2024-02-26', group: 'mistral', className: 'mistral', title: 'Mistral Large\nFebruary 26, 2024' },
+            { id: 43, content: 'Mixtral 8x22B', start: '2024-04-17', group: 'mistral', className: 'mistral', title: 'Mixtral 8x22B\nApril 17, 2024' },
+            { id: 44, content: 'Mistral Large 2', start: '2024-07-24', group: 'mistral', className: 'mistral', title: 'Mistral Large 2 (123B)\nJuly 24, 2024' },
+            { id: 112, content: 'Codestral 25.01', start: '2025-01-13', group: 'mistral', className: 'mistral', title: 'Codestral 25.01 (Code, 256K context)\nJanuary 13, 2025' },
+            { id: 113, content: 'Mistral Small 3', start: '2025-01-30', group: 'mistral', className: 'mistral', title: 'Mistral Small 3 (24B, Open source)\nJanuary 30, 2025' },
+            { id: 45, content: 'Mistral Medium 3', start: '2025-05-15', group: 'mistral', className: 'mistral', title: 'Mistral Medium 3\nMay 2025' },
+            { id: 46, content: 'Codestral 25.08', start: '2025-08-01', group: 'mistral', className: 'mistral', title: 'Codestral 25.08 (Code specialist)\nAugust 1, 2025' },
+            { id: 47, content: 'Mistral 3', start: '2025-12-02', group: 'mistral', className: 'mistral', title: 'Mistral 3 (675B MoE, Frontier)\nDecember 2, 2025' },
+
+            // xAI (2023-2025)
+            { id: 70, content: 'Grok 1', start: '2023-11-04', group: 'xai', className: 'xai', title: 'Grok 1\nNovember 4, 2023' },
+            { id: 71, content: 'Grok 2', start: '2024-08-14', group: 'xai', className: 'xai', title: 'Grok 2 & 2 mini\nAugust 14, 2024' },
+            { id: 72, content: 'Grok 3', start: '2025-02-17', group: 'xai', className: 'xai', title: 'Grok 3\nFebruary 17, 2025' },
+            { id: 73, content: 'Grok 3 mini', start: '2025-05-15', group: 'xai', className: 'xai', title: 'Grok 3 mini\nMay 2025' },
+            { id: 114, content: 'Grok 4', start: '2025-07-09', group: 'xai', className: 'xai', title: 'Grok 4 & 4 Heavy (Multi-agent reasoning)\nJuly 9, 2025' },
+            { id: 115, content: 'Grok 4 Fast', start: '2025-08-28', group: 'xai', className: 'xai', title: 'Grok 4 Fast (2M context)\nAugust 28, 2025' },
+            { id: 74, content: 'Grok 4.1', start: '2025-11-17', group: 'xai', className: 'xai', title: 'Grok 4.1\nNovember 17, 2025' },
+
+            // DeepSeek (2024-2025)
+            { id: 80, content: 'DeepSeek V2', start: '2024-05-06', group: 'deepseek', className: 'deepseek', title: 'DeepSeek V2 (236B MoE)\nMay 6, 2024' },
+            { id: 81, content: 'DeepSeek V3', start: '2024-12-26', group: 'deepseek', className: 'deepseek', title: 'DeepSeek V3 (671B MoE)\nDecember 26, 2024' },
+            { id: 82, content: 'DeepSeek R1', start: '2025-01-20', group: 'deepseek', className: 'deepseek', title: 'DeepSeek R1 (Reasoning, 671B)\nJanuary 20, 2025' },
+            { id: 116, content: 'DeepSeek V3 0324', start: '2025-03-24', group: 'deepseek', className: 'deepseek', title: 'DeepSeek V3 0324 (685B, MIT License)\nMarch 24, 2025' },
+            { id: 117, content: 'DeepSeek V3.2', start: '2025-12-01', group: 'deepseek', className: 'deepseek', title: 'DeepSeek V3.2 (Reasoning, IMO Gold)\nDecember 1, 2025' },
+
+            // Alibaba / Qwen (2023-2026)
+            { id: 90, content: 'Qwen', start: '2023-08-03', group: 'alibaba', className: 'alibaba', title: 'Qwen (7B-72B)\nAugust 2023' },
+            { id: 91, content: 'Qwen 2', start: '2024-06-07', group: 'alibaba', className: 'alibaba', title: 'Qwen 2\nJune 7, 2024' },
+            { id: 92, content: 'Qwen 2.5', start: '2024-09-19', group: 'alibaba', className: 'alibaba', title: 'Qwen 2.5 (0.5B-72B)\nSeptember 19, 2024' },
+            { id: 118, content: 'Qwen 2.5 Max', start: '2025-01-29', group: 'alibaba', className: 'alibaba', title: 'Qwen 2.5 Max (MoE)\nJanuary 29, 2025' },
+            { id: 93, content: 'Qwen 3', start: '2025-04-28', group: 'alibaba', className: 'alibaba', title: 'Qwen 3 (235B, Hybrid reasoning)\nApril 2025' },
+            { id: 119, content: 'Qwen3-Max-Thinking', start: '2026-01-27', group: 'alibaba', className: 'alibaba', title: 'Qwen3-Max-Thinking (Reasoning)\nJanuary 27, 2026' },
+
+            // Other Notable Models
+            { id: 60, content: 'GPT-J', start: '2021-06-09', group: 'other', className: 'other', title: 'GPT-J (6B) - EleutherAI\nJune 2021' },
+            { id: 61, content: 'Jurassic-1', start: '2021-08-11', group: 'other', className: 'other', title: 'Jurassic-1 (178B) - AI21 Labs\nAugust 2021' },
+            { id: 62, content: 'BLOOM', start: '2022-07-11', group: 'other', className: 'other', title: 'BLOOM (176B) - BigScience\nJuly 2022' },
+            { id: 63, content: 'Falcon', start: '2023-05-25', group: 'other', className: 'other', title: 'Falcon (40B) - TII\nMay 2023' },
+            { id: 64, content: 'Gopher', start: '2021-12-08', group: 'other', className: 'other', title: 'Gopher (280B) - DeepMind\nDecember 2021' },
+            { id: 65, content: 'Chinchilla', start: '2022-03-29', group: 'other', className: 'other', title: 'Chinchilla (70B) - DeepMind\nMarch 2022' }
+        ]);
+
+        // Configuration options
+        const options = {
+            start: '2022-06-01',
+            end: '2026-05-01',
+            min: '2019-01-01',
+            max: '2026-09-01',
+            zoomMin: 1000 * 60 * 60 * 24 * 30 * 3, // 3 months
+            zoomMax: 1000 * 60 * 60 * 24 * 365 * 7, // 7 years
+            orientation: 'top',
+            stack: true,
+            showCurrentTime: true,
+            tooltip: {
+                followMouse: true,
+                overflowMethod: 'cap'
+            },
+            groupOrder: function(a, b) {
+                const order = ['openai', 'anthropic', 'google', 'meta', 'mistral', 'xai', 'deepseek', 'alibaba', 'other'];
+                return order.indexOf(a.id) - order.indexOf(b.id);
+            }
+        };
+
+        // Create the timeline
+        const container = document.getElementById('timeline');
+        const timeline = new vis.Timeline(container, items, groups, options);
+
+        // Add click handler for item details
+        timeline.on('select', function(properties) {
+            if (properties.items.length > 0) {
+                const item = items.get(properties.items[0]);
+                console.log('Selected:', item.content, '-', item.title);
+            }
+        });
+    </script>
+</body>
+</html>
