@@ -82,8 +82,36 @@ Launch these agents in parallel:
 - Specialized variants (Vision, Air, coding-focused models)
 - Check zhipuai.cn, docs.z.ai/release-notes, and github.com/zai-org
 
+**Microsoft agent** — Search for:
+- Phi series (Phi-3, Phi-3.5, Phi-4, Phi-4-mini, Phi-5, etc.)
+- All size variants (mini, small, medium) and specialized (multimodal, reasoning)
+- Check azure.microsoft.com/en-us/blog and techcommunity.microsoft.com
+
+**Moonshot agent** — Search for:
+- Kimi series (Kimi k1.5, Kimi k2, etc.)
+- Check kimi.moonshot.cn and moonshotai.com
+
+**Cohere agent** — Search for:
+- Command series (Command R, Command R+, Command A, Command R7B, etc.)
+- Embed and Rerank model updates
+- Check cohere.com/blog and docs.cohere.com/changelog
+
+**Amazon agent** — Search for:
+- Nova series (Nova Micro, Nova Lite, Nova Pro, Nova Premier, etc.)
+- Titan models
+- Check aws.amazon.com/bedrock and aws.amazon.com/blogs/aws
+
+**ByteDance agent** — Search for:
+- Doubao series (Doubao-1.5-pro, Doubao-1.5-thinking, Doubao-Seed, etc.)
+- Check volcengine.com and bytedance AI announcements
+
+**MiniMax agent** — Search for:
+- MiniMax-Text series (MiniMax-Text-01, MiniMax-M1, etc.)
+- Speech and multimodal models
+- Check minimaxi.com and github.com/MiniMax-AI
+
 **Other providers agent** — Search for:
-- Cohere (Command R/R+), AI21 (Jamba), Stability AI, EleutherAI
+- AI21 (Jamba), Stability AI, EleutherAI
 - Any significant new entrants or open-source models making headlines
 - Search `"notable AI model releases <year>"` to catch anything missed
 
@@ -124,6 +152,12 @@ For each new model found, add an entry to the `items` DataSet array in `index.ht
 | DeepSeek | `deepseek` |
 | Alibaba | `alibaba` |
 | Zhipu | `zhipu` |
+| Microsoft | `microsoft` |
+| Moonshot | `moonshot` |
+| Cohere | `cohere` |
+| Amazon | `amazon` |
+| ByteDance | `bytedance` |
+| MiniMax | `minimax` |
 | Other | `other` |
 
 ### Rules
