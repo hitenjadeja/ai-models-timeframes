@@ -108,6 +108,7 @@
         .xai { background-color: #000000 !important; border-color: #333333 !important; color: white !important; }
         .deepseek { background-color: #0ea5e9 !important; border-color: #0284c7 !important; color: white !important; }
         .alibaba { background-color: #ff6a00 !important; border-color: #e65c00 !important; color: white !important; }
+        .zhipu { background-color: #7c3aed !important; border-color: #6d28d9 !important; color: white !important; }
         .other { background-color: #6b7280 !important; border-color: #4b5563 !important; color: white !important; }
 
         footer {
@@ -158,6 +159,10 @@
             <span>Alibaba</span>
         </div>
         <div class="legend-item">
+            <div class="legend-color" style="background: #7c3aed;"></div>
+            <span>Zhipu</span>
+        </div>
+        <div class="legend-item">
             <div class="legend-color" style="background: #6b7280;"></div>
             <span>Other</span>
         </div>
@@ -182,6 +187,7 @@
             { id: 'xai', content: 'xAI', className: 'xai' },
             { id: 'deepseek', content: 'DeepSeek', className: 'deepseek' },
             { id: 'alibaba', content: 'Alibaba', className: 'alibaba' },
+            { id: 'zhipu', content: 'Zhipu', className: 'zhipu' },
             { id: 'other', content: 'Other', className: 'other' }
         ]);
 
@@ -281,6 +287,13 @@
             { id: 93, content: 'Qwen 3', start: '2025-04-28', group: 'alibaba', className: 'alibaba', title: 'Qwen 3 (235B, Hybrid reasoning)\nApril 2025' },
             { id: 119, content: 'Qwen3-Max-Thinking', start: '2026-01-27', group: 'alibaba', className: 'alibaba', title: 'Qwen3-Max-Thinking (Reasoning)\nJanuary 27, 2026' },
 
+            // Zhipu / Z.ai (2023-2026)
+            { id: 122, content: 'ChatGLM', start: '2023-03-14', group: 'zhipu', className: 'zhipu', title: 'ChatGLM (130B)\nMarch 14, 2023' },
+            { id: 123, content: 'GLM-4', start: '2024-06-05', group: 'zhipu', className: 'zhipu', title: 'GLM-4 (9B, Open source)\nJune 5, 2024' },
+            { id: 124, content: 'GLM-4.5', start: '2025-07-28', group: 'zhipu', className: 'zhipu', title: 'GLM-4.5 (355B MoE, Open source)\nJuly 28, 2025' },
+            { id: 125, content: 'GLM-4.7', start: '2025-12-22', group: 'zhipu', className: 'zhipu', title: 'GLM-4.7 (400B, Coding)\nDecember 22, 2025' },
+            { id: 126, content: 'GLM-5', start: '2026-02-11', group: 'zhipu', className: 'zhipu', title: 'GLM-5 (745B MoE, Open source)\nFebruary 11, 2026' },
+
             // Other Notable Models
             { id: 60, content: 'GPT-J', start: '2021-06-09', group: 'other', className: 'other', title: 'GPT-J (6B) - EleutherAI\nJune 2021' },
             { id: 61, content: 'Jurassic-1', start: '2021-08-11', group: 'other', className: 'other', title: 'Jurassic-1 (178B) - AI21 Labs\nAugust 2021' },
@@ -306,7 +319,7 @@
                 overflowMethod: 'cap'
             },
             groupOrder: function(a, b) {
-                const order = ['openai', 'anthropic', 'google', 'meta', 'mistral', 'xai', 'deepseek', 'alibaba', 'other'];
+                const order = ['openai', 'anthropic', 'google', 'meta', 'mistral', 'xai', 'deepseek', 'alibaba', 'zhipu', 'other'];
                 return order.indexOf(a.id) - order.indexOf(b.id);
             }
         };
