@@ -77,6 +77,11 @@ Launch these agents in parallel:
 - Specialized: Qwen-Coder, Qwen-VL (vision), Qwen-Omni
 - Check qwen.ai and github.com/QwenLM
 
+**Zhipu / Z.ai agent** — Search for:
+- GLM series (ChatGLM, GLM-4, GLM-4.5, GLM-4.7, GLM-5, etc.)
+- Specialized variants (Vision, Air, coding-focused models)
+- Check zhipuai.cn, docs.z.ai/release-notes, and github.com/zai-org
+
 **Other providers agent** — Search for:
 - Cohere (Command R/R+), AI21 (Jamba), Stability AI, EleutherAI
 - Any significant new entrants or open-source models making headlines
@@ -118,6 +123,7 @@ For each new model found, add an entry to the `items` DataSet array in `index.ht
 | xAI | `xai` |
 | DeepSeek | `deepseek` |
 | Alibaba | `alibaba` |
+| Zhipu | `zhipu` |
 | Other | `other` |
 
 ### Rules
