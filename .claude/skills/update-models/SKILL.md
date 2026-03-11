@@ -16,16 +16,39 @@ Read `index.html` and extract all existing model entries from the `vis.DataSet` 
 
 ## Step 2: Research New Releases (Agent Teams)
 
-Launch **parallel research agents** using the Task tool (subagent_type: "general-purpose") — one per provider. Each agent should perform **multiple targeted searches** to ensure thorough coverage.
+Launch **parallel research agents** using the Task tool (subagent_type: "general-purpose", model: "sonnet", max_turns: 30) — one per provider. Using Sonnet 4.6 gives each agent a 1M token context window for thorough research. Each agent should perform **multiple targeted searches** to ensure thorough coverage.
+
+### Critical: Incremental file output (prevents data loss)
+
+Before launching agents, create the output directory:
+```bash
+mkdir -p /tmp/models-research
+```
+
+Each agent **MUST write findings to its output file after every search** — not just at the end. This ensures no data is lost if the agent hits its context limit or turn limit.
+
+**Every agent prompt MUST include these instructions:**
+
+> **OUTPUT RULES (NON-NEGOTIABLE):**
+> 1. Your output file is `/tmp/models-research/<provider>.md`
+> 2. After EACH search, immediately append any new models found to your output file using the Write tool
+> 3. Use this format in the file — one model per line:
+>    ```
+>    | Model Name | YYYY-MM-DD | Key Detail | Source URL |
+>    ```
+> 4. Start the file with a markdown table header: `| Model | Date | Details | Source |` and `|---|---|---|---|`
+> 5. At the top of the file, keep a status line: `STATUS: IN PROGRESS` (update to `STATUS: COMPLETE` when done)
+> 6. Write to the file FREQUENTLY — after every 1-2 searches. Do not batch all writes to the end.
+> 7. If you are running low on context or turns, immediately write everything you have and mark status as `STATUS: PARTIAL - ran out of context`
 
 ### Agent instructions template
 
 For each provider agent, instruct it to:
-1. Search for the provider's **main model line** releases
-2. Search separately for **specialized variants** (coding models, reasoning modes, vision/multimodal, speed/efficiency variants)
-3. Search for the provider's **model release notes or changelog page** and extract dates
-4. Cross-reference with a general search like `"<provider> AI model releases <year>"` for anything missed
-5. Return a structured list of models found with: name, release date, key detail, and source URL
+1. Search for the provider's **main model line** releases — **write findings to file**
+2. Search separately for **specialized variants** (coding models, reasoning modes, vision/multimodal, speed/efficiency variants) — **write findings to file**
+3. Search for the provider's **model release notes or changelog page** and extract dates — **write findings to file**
+4. Cross-reference with a general search like `"<provider> AI model releases <year>"` for anything missed — **write findings to file**
+5. Update status to COMPLETE when done
 
 ### Provider-specific search guidance
 
@@ -117,17 +140,21 @@ Launch these agents in parallel:
 
 ## Step 3: Compile & Deduplicate
 
-After all agents return:
-1. Collect all discovered models into a single list
-2. Cross-reference against existing entries in `index.html` to remove duplicates
-3. Filter out unreleased/rumored models — only include publicly released ones
+After all agents return, read all output files from `/tmp/models-research/`:
+1. Read each provider's `.md` file from `/tmp/models-research/`
+2. Check the STATUS line — note any agents that are `PARTIAL` (their results may be incomplete, flag for manual review)
+3. Collect all discovered models into a single list
+4. Cross-reference against existing entries in `index.html` to remove duplicates
+5. Filter out unreleased/rumored models — only include publicly released ones
 
 ## Step 4: Verification Round
 
-Run one final verification agent to search for:
+Run one final verification agent (subagent_type: "general-purpose", model: "sonnet", max_turns: 20) to search for:
 - `"AI model releases <current month> <current year>"` and `"AI model releases <previous month> <current year>"`
 - `"new AI models this week"` or `"latest AI model launches"`
 - Check llm-stats.com, artificialanalysis.ai, or similar aggregator sites
+
+This agent MUST write findings to `/tmp/models-research/verification.md` using the same incremental format as other agents.
 
 This catches very recent releases that provider-specific searches might miss.
 
