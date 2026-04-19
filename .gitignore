@@ -1,0 +1,25 @@
+# Claude Code runtime
+.claude/scheduled_tasks.lock
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs / build (not currently used but defensive)
+*.log
+node_modules/
+dist/
+build/
+.cache/
+
+# Env (defensive, none currently exist)
+.env
+.env.local
+.env.*.local
