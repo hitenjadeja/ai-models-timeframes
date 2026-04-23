@@ -214,7 +214,7 @@
     <div id="timeline"></div>
 
     <footer>
-        Data compiled from public announcements and documentation. Last updated: April 18, 2026.
+        Data compiled from public announcements and documentation. Last updated: April 23, 2026.
     </footer>
 
     <script>
@@ -269,6 +269,10 @@
             { id: 200, content: 'GPT-5.4 nano', start: '2026-03-17', group: 'openai', className: 'openai', title: 'GPT-5.4 nano (API-only, $0.20/M input)\nMarch 17, 2026' },
             { id: 201, content: 'GPT-5.4-Cyber', start: '2026-04-14', group: 'openai', className: 'openai', title: 'GPT-5.4-Cyber (Security research, Trusted Access)\nApril 14, 2026' },
             { id: 202, content: 'GPT-Rosalind', start: '2026-04-16', group: 'openai', className: 'openai', title: 'GPT-Rosalind (Life sciences, drug discovery, genomics)\nApril 16, 2026' },
+            { id: 238, content: 'gpt-image-2', start: '2026-04-21', group: 'openai', className: 'openai', title: 'gpt-image-2 (Native reasoning image gen, 2K, multi-image consistency)\nApril 21, 2026' },
+            { id: 239, content: 'GPT-5.5', start: '2026-04-23', group: 'openai', className: 'openai', title: 'GPT-5.5 (Flagship, agentic coding, computer use, scientific research)\nApril 23, 2026' },
+            { id: 240, content: 'GPT-5.5 Thinking', start: '2026-04-23', group: 'openai', className: 'openai', title: 'GPT-5.5 Thinking (Reasoning variant, faster on harder problems)\nApril 23, 2026' },
+            { id: 241, content: 'GPT-5.5 Pro', start: '2026-04-23', group: 'openai', className: 'openai', title: 'GPT-5.5 Pro (High-accuracy variant, 2x API price)\nApril 23, 2026' },
 
             // Anthropic (2023-2026)
             { id: 10, content: 'Claude 1.0', start: '2023-03-14', group: 'anthropic', className: 'anthropic', title: 'Claude 1.0\nMarch 14, 2023' },
@@ -314,6 +318,8 @@
             { id: 206, content: 'Gemma 4', start: '2026-04-02', group: 'google', className: 'google', title: 'Gemma 4 (E2B, E4B, 26B-MoE, 31B Dense, 256K context, Apache 2.0)\nApril 2, 2026' },
             { id: 207, content: 'Gemini Robotics-ER 1.6', start: '2026-04-14', group: 'google', className: 'google', title: 'Gemini Robotics-ER 1.6 (Embodied reasoning, Boston Dynamics Spot)\nApril 14, 2026' },
             { id: 208, content: 'Gemini 3.1 Flash TTS', start: '2026-04-15', group: 'google', className: 'google', title: 'Gemini 3.1 Flash TTS (70+ languages, multi-speaker, SynthID)\nApril 15, 2026' },
+            { id: 242, content: 'Gemini Embedding 2', start: '2026-04-21', group: 'google', className: 'google', title: 'Gemini Embedding 2 GA (Natively multimodal, #1 MTEB)\nApril 21, 2026' },
+            { id: 243, content: 'Deep Research Max', start: '2026-04-21', group: 'google', className: 'google', title: 'Deep Research Max (Autonomous research agent, 93.3% DeepSearchQA)\nApril 21, 2026' },
 
             // Meta (2020-2026)
             { id: 30, content: 'BlenderBot', start: '2020-04-29', group: 'meta', className: 'meta', title: 'BlenderBot 1.0\nApril 2020' },
@@ -393,6 +399,8 @@
             { id: 219, content: 'Qwen3.5-Omni-Light', start: '2026-03-30', group: 'alibaba', className: 'alibaba', title: 'Qwen3.5-Omni-Light (Omnimodal, edge/on-device, Open-weight)\nMarch 30, 2026' },
             { id: 220, content: 'Qwen3.6-Plus', start: '2026-04-02', group: 'alibaba', className: 'alibaba', title: 'Qwen3.6-Plus (1M context, agentic coding, rivals Claude Opus 4.5)\nApril 2, 2026' },
             { id: 221, content: 'Qwen3.6-35B-A3B', start: '2026-04-16', group: 'alibaba', className: 'alibaba', title: 'Qwen3.6-35B-A3B (35B MoE, 3B active, 73.4% SWE-bench, Apache 2.0)\nApril 16, 2026' },
+            { id: 244, content: 'Qwen3.6-Max-Preview', start: '2026-04-20', group: 'alibaba', className: 'alibaba', title: 'Qwen3.6-Max-Preview (35B MoE, 256K context, closed-weights, top coding/agent benchmarks)\nApril 20, 2026' },
+            { id: 245, content: 'Qwen3.6-27B', start: '2026-04-22', group: 'alibaba', className: 'alibaba', title: 'Qwen3.6-27B (Dense open-weight, Apache 2.0, beats 397B MoE on agentic coding)\nApril 22, 2026' },
 
             // Zhipu / Z.ai (2023-2026)
             { id: 122, content: 'ChatGLM', start: '2023-03-14', group: 'zhipu', className: 'zhipu', title: 'ChatGLM (130B)\nMarch 14, 2023' },
@@ -416,12 +424,14 @@
             { id: 226, content: 'MAI-Image-2', start: '2026-03-19', group: 'microsoft', className: 'microsoft', title: 'MAI-Image-2 (First-party text-to-image, #3 Arena.ai)\nMarch 19, 2026' },
             { id: 227, content: 'MAI-Voice-1', start: '2026-04-02', group: 'microsoft', className: 'microsoft', title: 'MAI-Voice-1 (TTS, 60s audio in <1s, custom voices)\nApril 2, 2026' },
             { id: 228, content: 'MAI-Transcribe-1', start: '2026-04-02', group: 'microsoft', className: 'microsoft', title: 'MAI-Transcribe-1 (ASR, 3.9% WER, 25 languages, 2.5x faster)\nApril 2, 2026' },
+            { id: 246, content: 'MAI-Image-2-Efficient', start: '2026-04-14', group: 'microsoft', className: 'microsoft', title: 'MAI-Image-2-Efficient (41% cheaper, 22% faster variant)\nApril 14, 2026' },
 
             // Moonshot AI / Kimi (2025-2026)
             { id: 136, content: 'Kimi K2', start: '2025-07-11', group: 'moonshot', className: 'moonshot', title: 'Kimi K2 (1T MoE, Open source)\nJuly 11, 2025' },
             { id: 137, content: 'Kimi K2.5', start: '2026-01-27', group: 'moonshot', className: 'moonshot', title: 'Kimi K2.5 (Multimodal, Open source)\nJanuary 27, 2026' },
             { id: 173, content: 'Kimi k1.5', start: '2025-01-20', group: 'moonshot', className: 'moonshot', title: 'Kimi k1.5 (Reasoning, 128K context)\nJanuary 20, 2025' },
             { id: 229, content: 'Kimi K2.6 Code Preview', start: '2026-04-13', group: 'moonshot', className: 'moonshot', title: 'Kimi K2.6 Code Preview (1T MoE, 32B active, 256K context)\nApril 13, 2026' },
+            { id: 247, content: 'Kimi K2.6', start: '2026-04-21', group: 'moonshot', className: 'moonshot', title: 'Kimi K2.6 GA (1T/32B MoE, 58.6% SWE-Bench Pro, 13-hour autonomous coding, Modified MIT)\nApril 21, 2026' },
 
             // Cohere (2024-2026)
             { id: 138, content: 'Command R+', start: '2024-04-04', group: 'cohere', className: 'cohere', title: 'Command R+ (Enterprise RAG)\nApril 4, 2024' },
@@ -442,6 +452,7 @@
             { id: 143, content: 'Doubao 2.0', start: '2026-02-14', group: 'bytedance', className: 'bytedance', title: 'Doubao 2.0\nFebruary 14, 2026' },
             { id: 177, content: 'Seed1.8', start: '2025-12-24', group: 'bytedance', className: 'bytedance', title: 'Seed1.8 (Agentic multimodal)\nDecember 24, 2025' },
             { id: 231, content: 'Seeduplex', start: '2026-04-09', group: 'bytedance', className: 'bytedance', title: 'Seeduplex (Full-duplex speech LLM, simultaneous listen-and-speak)\nApril 9, 2026' },
+            { id: 248, content: 'Seed3D 2.0', start: '2026-04-23', group: 'bytedance', className: 'bytedance', title: 'Seed3D 2.0 (3D generation, SOTA geometry and material realism)\nApril 23, 2026' },
 
             // MiniMax (2025-2026)
             { id: 144, content: 'MiniMax-M1', start: '2025-06-16', group: 'minimax', className: 'minimax', title: 'MiniMax-M1 (Hybrid attention, Open source)\nJune 16, 2025' },
@@ -449,6 +460,7 @@
             { id: 146, content: 'MiniMax-M2.5', start: '2026-02-12', group: 'minimax', className: 'minimax', title: 'MiniMax-M2.5 (Near Claude Sonnet-level)\nFebruary 12, 2026' },
             { id: 178, content: 'MiniMax-Text-01', start: '2025-01-15', group: 'minimax', className: 'minimax', title: 'MiniMax-Text-01 (456B, 4M context)\nJanuary 15, 2025' },
             { id: 232, content: 'MiniMax-M2.7', start: '2026-03-18', group: 'minimax', className: 'minimax', title: 'MiniMax-M2.7 (229B MoE self-evolving agent, 56.22% SWE-Pro)\nMarch 18, 2026' },
+            { id: 249, content: 'MiniMax Music-2.6', start: '2026-04-10', group: 'minimax', className: 'minimax', title: 'MiniMax Music-2.6 (Music generation, open-sourced MusicSkills)\nApril 10, 2026' },
 
             // Other Notable Models
             { id: 60, content: 'GPT-J', start: '2021-06-09', group: 'other', className: 'other', title: 'GPT-J (6B) - EleutherAI\nJune 2021' },
@@ -469,15 +481,18 @@
             { id: 234, content: 'MiMo-V2-Pro', start: '2026-03-18', group: 'other', className: 'other', title: 'MiMo-V2-Pro (1T+ MoE agentic flagship, 1M context) - Xiaomi\nMarch 18, 2026' },
             { id: 235, content: 'Step 3.5 Flash', start: '2026-04-02', group: 'other', className: 'other', title: 'Step 3.5 Flash 2603 (196B MoE, open-source, 197 tok/s) - StepFun\nApril 2, 2026' },
             { id: 236, content: 'Trinity Large Thinking', start: '2026-04-02', group: 'other', className: 'other', title: 'Trinity Large Thinking (399B MoE, long-horizon agents, Apache 2.0) - Arcee AI\nApril 2, 2026' },
-            { id: 237, content: 'ERNIE-Image', start: '2026-04-15', group: 'other', className: 'other', title: 'ERNIE-Image (8B DiT text-to-image, Apache 2.0) - Baidu\nApril 15, 2026' }
+            { id: 237, content: 'ERNIE-Image', start: '2026-04-15', group: 'other', className: 'other', title: 'ERNIE-Image (8B DiT text-to-image, Apache 2.0) - Baidu\nApril 15, 2026' },
+            { id: 250, content: 'HY-World 2.0', start: '2026-04-16', group: 'other', className: 'other', title: 'HY-World 2.0 (Multimodal 3D world generation, Unity/UE5/Isaac Sim) - Tencent\nApril 16, 2026' },
+            { id: 251, content: 'MiMo-V2.5-Pro', start: '2026-04-22', group: 'other', className: 'other', title: 'MiMo-V2.5-Pro (Multimodal, 1M context, frontier benchmarks) - Xiaomi\nApril 22, 2026' },
+            { id: 252, content: 'Hunyuan Hy3-preview', start: '2026-04-23', group: 'other', className: 'other', title: 'Hunyuan Hy3-preview (295B/21B MoE, open-sourced) - Tencent\nApril 23, 2026' }
         ];
 
         const items = new vis.DataSet(allItems);
 
         // Configuration options
         const options = {
-            start: '2026-01-18',
-            end: '2026-04-18',
+            start: '2026-01-23',
+            end: '2026-04-23',
             min: '2019-01-01',
             max: '2026-10-01',
             zoomMin: 1000 * 60 * 60 * 24 * 30 * 3, // 3 months
