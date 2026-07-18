@@ -214,7 +214,7 @@
     <div id="timeline"></div>
 
     <footer>
-        Data compiled from public announcements and documentation. Last updated: July 10, 2026.
+        Data compiled from public announcements and documentation. Last updated: July 18, 2026.
     </footer>
 
     <script>
@@ -456,6 +456,10 @@
             { id: 307, content: 'Qwen-AgentWorld', start: '2026-06-22', group: 'alibaba', className: 'alibaba', title: 'Qwen-AgentWorld (Open language world model, simulates 7 agent environments, Apache 2.0)\nJune 22, 2026' },
             { id: 364, content: 'Qwen-Image-2.0-Pro', start: '2026-06-25', group: 'alibaba', className: 'alibaba', title: 'Qwen-Image-2.0-Pro (Unified image generation and editing snapshot)\nJune 25, 2026' },
             { id: 365, content: 'Wan 2.7', start: '2026-07-01', group: 'alibaba', className: 'alibaba', title: 'Wan 2.7 (T2V, I2V and reference-to-video snapshots)\nJuly 1, 2026' },
+            { id: 374, content: 'Qwen-Audio-3.0-Realtime-Plus', start: '2026-07-14', group: 'alibaba', className: 'alibaba', title: 'Qwen-Audio-3.0-Realtime-Plus (End-to-end speech reasoning and duplex conversation)\nJuly 14, 2026' },
+            { id: 375, content: 'Qwen-Audio-3.0-Realtime-Flash', start: '2026-07-14', group: 'alibaba', className: 'alibaba', title: 'Qwen-Audio-3.0-Realtime-Flash (Low-latency duplex speech variant)\nJuly 14, 2026' },
+            { id: 376, content: 'Qwen-Audio-3.0-TTS-Plus', start: '2026-07-14', group: 'alibaba', className: 'alibaba', title: 'Qwen-Audio-3.0-TTS-Plus (Professional speech synthesis, expanded languages and dialects)\nJuly 14, 2026' },
+            { id: 377, content: 'Qwen-Audio-3.0-TTS-Flash', start: '2026-07-14', group: 'alibaba', className: 'alibaba', title: 'Qwen-Audio-3.0-TTS-Flash (Low-latency speech synthesis, under 200ms TTFA)\nJuly 14, 2026' },
 
             // Zhipu / Z.ai (2023-2026)
             { id: 122, content: 'ChatGLM', start: '2023-03-14', group: 'zhipu', className: 'zhipu', title: 'ChatGLM (130B)\nMarch 14, 2023' },
@@ -501,6 +505,7 @@
             { id: 229, content: 'Kimi K2.6 Code Preview', start: '2026-04-13', group: 'moonshot', className: 'moonshot', title: 'Kimi K2.6 Code Preview (1T MoE, 32B active, 256K context)\nApril 13, 2026' },
             { id: 247, content: 'Kimi K2.6', start: '2026-04-21', group: 'moonshot', className: 'moonshot', title: 'Kimi K2.6 GA (1T/32B MoE, 58.6% SWE-Bench Pro, 13-hour autonomous coding, Modified MIT)\nApril 21, 2026' },
             { id: 321, content: 'Kimi K2.7-Code', start: '2026-06-25', group: 'moonshot', className: 'moonshot', title: 'Kimi K2.7-Code (1T/32B MoE coding model, +21.8% Kimi Code Bench v2, Modified MIT)\nJune 25, 2026' },
+            { id: 378, content: 'Kimi K3', start: '2026-07-16', group: 'moonshot', className: 'moonshot', title: 'Kimi K3 (2.8T MoE, native vision, 1M context)\nJuly 16, 2026' },
 
             // Cohere (2024-2026)
             { id: 138, content: 'Command R+', start: '2024-04-04', group: 'cohere', className: 'cohere', title: 'Command R+ (Enterprise RAG)\nApril 4, 2024' },
@@ -604,7 +609,10 @@
             { id: 360, content: 'Nemotron Labs 3 Puzzle', start: '2026-07-06', group: 'other', className: 'other', title: 'Nemotron Labs 3 Puzzle (75B/9.3B compressed Nemotron 3 Super variant) - NVIDIA\nJuly 6, 2026' },
             { id: 361, content: 'Granite SWASH', start: '2026-07-07', group: 'other', className: 'other', title: 'Granite SWASH 2B / 3B-a600M (Sliding-window attention + attention sinks) - IBM\nJuly 7, 2026' },
             { id: 362, content: 'LingBot-VLA 2.0', start: '2026-07-08', group: 'other', className: 'other', title: 'LingBot-VLA 2.0 (6B VLA robotics model, expanded action space) - Robbyant\nJuly 8, 2026' },
-            { id: 371, content: 'SWE-1.7', start: '2026-07-08', group: 'other', className: 'other', title: 'SWE-1.7 (Agentic software engineering model) - Cognition\nJuly 8, 2026' }
+            { id: 371, content: 'SWE-1.7', start: '2026-07-08', group: 'other', className: 'other', title: 'SWE-1.7 (Agentic software engineering model) - Cognition\nJuly 8, 2026' },
+            { id: 379, content: 'Inkling', start: '2026-07-15', group: 'other', className: 'other', title: 'Inkling (975B/41B MoE, native multimodal reasoning, 1M context, open weights) - Thinking Machines Lab\nJuly 15, 2026' },
+            { id: 380, content: 'SQRL', start: '2026-07-16', group: 'other', className: 'other', title: 'SQRL (35B-A3B, 9B and 4B text-to-SQL model family) - Feyn\nJuly 16, 2026' },
+            { id: 381, content: 'EU Institutional LLM v1', start: '2026-07-16', group: 'other', className: 'other', title: 'EU Institutional LLM v1 (Base and instruct, 24 EU languages, open model) - European Commission\nJuly 16, 2026' }
         ];
 
         const items = new vis.DataSet(allItems);
@@ -612,7 +620,7 @@
         // Configuration options
         const options = {
             start: '2026-04-09',
-            end: '2026-07-10',
+            end: '2026-07-18',
             min: '2019-01-01',
             max: '2026-11-01',
             zoomMin: 1000 * 60 * 60 * 24 * 30 * 3, // 3 months
