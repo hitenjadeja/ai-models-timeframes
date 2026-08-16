@@ -3,7 +3,116 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Models Timeline (2020-2026)</title>
+    <title>AI Model Release Timeline (2020–2026) | LLM History</title>
+    <meta name="description" content="Explore 380+ major AI and LLM releases from OpenAI, Anthropic, Google, Meta, Mistral, xAI and more in an interactive timeline updated for 2026.">
+    <meta name="author" content="Hiten Jadeja">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="theme-color" content="#16213e">
+    <meta name="color-scheme" content="dark">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="canonical" href="https://hitenjadeja.github.io/ai-models-timeframes/">
+    <link rel="author" href="https://github.com/hitenjadeja">
+
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="AI Models Timeline">
+    <meta property="og:locale" content="en_GB">
+    <meta property="og:url" content="https://hitenjadeja.github.io/ai-models-timeframes/">
+    <meta property="og:title" content="AI Model Release Timeline (2020–2026)">
+    <meta property="og:description" content="Explore 380+ major AI and LLM releases across 16 provider groups in a filterable, interactive timeline.">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="AI Model Release Timeline (2020–2026)">
+    <meta name="twitter:description" content="Explore 380+ major AI and LLM releases across 16 provider groups in a filterable, interactive timeline.">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "WebSite",
+                "@id": "https://hitenjadeja.github.io/ai-models-timeframes/#website",
+                "url": "https://hitenjadeja.github.io/ai-models-timeframes/",
+                "name": "AI Models Timeline",
+                "alternateName": "AI Model Release Timeline",
+                "description": "An interactive chronology of major artificial intelligence and large language model releases from 2020 through 2026.",
+                "inLanguage": "en",
+                "datePublished": "2026-02-14",
+                "dateModified": "2026-08-16",
+                "creator": {
+                    "@type": "Person",
+                    "name": "Hiten Jadeja",
+                    "url": "https://github.com/hitenjadeja"
+                }
+            },
+            {
+                "@type": "Dataset",
+                "@id": "https://hitenjadeja.github.io/ai-models-timeframes/#dataset",
+                "name": "AI Model Release Timeline Dataset (2020–2026)",
+                "description": "Release dates and short descriptions for more than 380 notable AI models from OpenAI, Anthropic, Google DeepMind, Meta, Mistral AI, xAI, DeepSeek and other providers.",
+                "url": "https://hitenjadeja.github.io/ai-models-timeframes/",
+                "sameAs": "https://github.com/hitenjadeja/ai-models-timeframes",
+                "keywords": [
+                    "AI model release dates",
+                    "LLM timeline",
+                    "large language models",
+                    "generative AI history",
+                    "OpenAI models",
+                    "Claude models",
+                    "Gemini models",
+                    "Llama models"
+                ],
+                "temporalCoverage": "2020-01-28/2026-08-14",
+                "spatialCoverage": "Global",
+                "inLanguage": "en",
+                "isAccessibleForFree": true,
+                "datePublished": "2026-02-14",
+                "dateModified": "2026-08-16",
+                "license": "https://github.com/hitenjadeja/ai-models-timeframes/blob/main/LICENSE",
+                "creator": {
+                    "@type": "Person",
+                    "name": "Hiten Jadeja",
+                    "url": "https://github.com/hitenjadeja"
+                },
+                "distribution": {
+                    "@type": "DataDownload",
+                    "encodingFormat": "text/html",
+                    "contentUrl": "https://github.com/hitenjadeja/ai-models-timeframes/blob/main/index.html"
+                }
+            },
+            {
+                "@type": "FAQPage",
+                "@id": "https://hitenjadeja.github.io/ai-models-timeframes/#faq",
+                "mainEntity": [
+                    {
+                        "@type": "Question",
+                        "name": "What is the AI Models Timeline?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "It is a free interactive chronology of notable AI and large language model releases from 2020 through 2026, grouped by provider."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Which AI companies and model families are included?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "The timeline covers models from OpenAI, Anthropic, Google DeepMind, Meta, Mistral AI, xAI, DeepSeek, Alibaba, Microsoft, Amazon, Cohere, ByteDance, MiniMax, Zhipu AI, Moonshot AI and other research organisations."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "How often is the AI model timeline updated?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "The timeline is updated regularly as notable models are announced. The latest revision date appears on the page and in the public GitHub repository."
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+    </script>
+
     <script src="https://unpkg.com/vis-timeline@7.7.3/standalone/umd/vis-timeline-graph2d.min.js"></script>
     <link href="https://unpkg.com/vis-timeline@7.7.3/styles/vis-timeline-graph2d.min.css" rel="stylesheet" type="text/css" />
     <style>
@@ -18,12 +127,14 @@
             background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
             min-height: 100vh;
             color: #fff;
+            line-height: 1.6;
         }
 
         header {
             text-align: center;
-            padding: 2rem 1rem;
+            padding: 2.75rem 1rem 2.25rem;
             background: rgba(0,0,0,0.3);
+            border-bottom: 1px solid rgba(255,255,255,0.08);
         }
 
         h1 {
@@ -38,6 +149,80 @@
         .subtitle {
             color: #94a3b8;
             font-size: 1.1rem;
+        }
+
+        .eyebrow {
+            margin-bottom: 0.5rem;
+            color: #67e8f9;
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+        }
+
+        .intro {
+            max-width: 760px;
+            margin: 0.75rem auto 0;
+            color: #cbd5e1;
+        }
+
+        .header-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.75rem;
+            margin-top: 1.25rem;
+        }
+
+        .header-links a,
+        .content-card a,
+        footer a {
+            color: #67e8f9;
+        }
+
+        .header-links a {
+            padding: 0.45rem 0.8rem;
+            border: 1px solid rgba(103,232,249,0.35);
+            border-radius: 999px;
+            font-size: 0.85rem;
+            text-decoration: none;
+        }
+
+        .header-links a:hover,
+        .header-links a:focus-visible {
+            background: rgba(103,232,249,0.12);
+        }
+
+        main {
+            padding-bottom: 1rem;
+        }
+
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 0.75rem;
+            width: 95%;
+            max-width: 900px;
+            margin: 1.5rem auto 0;
+        }
+
+        .summary-card {
+            padding: 1rem;
+            text-align: center;
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 12px;
+        }
+
+        .summary-card strong {
+            display: block;
+            color: #fff;
+            font-size: 1.25rem;
+        }
+
+        .summary-card span {
+            color: #94a3b8;
+            font-size: 0.8rem;
         }
 
         .legend {
@@ -110,21 +295,95 @@
             font-size: 0.85rem;
         }
 
+        .timeline-heading {
+            margin: 2rem 1rem 0.25rem;
+            text-align: center;
+            font-size: clamp(1.35rem, 3vw, 1.8rem);
+        }
+
+        .content-card {
+            width: 92%;
+            max-width: 1100px;
+            margin: 2.5rem auto 1rem;
+            padding: clamp(1.25rem, 3vw, 2.5rem);
+            color: #cbd5e1;
+            background: rgba(10,15,35,0.56);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 16px;
+            box-shadow: 0 18px 50px rgba(0,0,0,0.2);
+        }
+
+        .content-card h2 {
+            margin-bottom: 0.75rem;
+            color: #fff;
+            font-size: clamp(1.4rem, 3vw, 2rem);
+            line-height: 1.25;
+        }
+
+        .content-card h3 {
+            margin-bottom: 0.35rem;
+            color: #f8fafc;
+            font-size: 1rem;
+        }
+
+        .content-card p + p {
+            margin-top: 0.75rem;
+        }
+
+        .provider-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 0.75rem;
+            margin: 1.5rem 0;
+        }
+
+        .provider-grid article {
+            padding: 1rem;
+            background: rgba(255,255,255,0.055);
+            border-radius: 10px;
+        }
+
+        .provider-grid p {
+            color: #94a3b8;
+            font-size: 0.9rem;
+        }
+
+        .faq {
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .faq details {
+            padding: 0.8rem 0;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .faq summary {
+            color: #f8fafc;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .faq details p {
+            margin-top: 0.5rem;
+        }
+
         /* Company colors */
-        .openai { background-color: #10a37f !important; border-color: #0d8a6a !important; color: white !important; }
-        .anthropic { background-color: #d97706 !important; border-color: #b45309 !important; color: white !important; }
-        .google { background-color: #4285f4 !important; border-color: #3367d6 !important; color: white !important; }
+        .openai { background-color: #10a37f !important; border-color: #0d8a6a !important; color: #071a15 !important; }
+        .anthropic { background-color: #d97706 !important; border-color: #b45309 !important; color: #1f1303 !important; }
+        .google { background-color: #4285f4 !important; border-color: #3367d6 !important; color: #071426 !important; }
         .meta { background-color: #0668e1 !important; border-color: #0553b8 !important; color: white !important; }
-        .mistral { background-color: #ff7000 !important; border-color: #e66300 !important; color: white !important; }
+        .mistral { background-color: #ff7000 !important; border-color: #e66300 !important; color: #211000 !important; }
         .xai { background-color: #000000 !important; border-color: #333333 !important; color: white !important; }
-        .deepseek { background-color: #0ea5e9 !important; border-color: #0284c7 !important; color: white !important; }
-        .alibaba { background-color: #ff6a00 !important; border-color: #e65c00 !important; color: white !important; }
+        .deepseek { background-color: #0ea5e9 !important; border-color: #0284c7 !important; color: #061923 !important; }
+        .alibaba { background-color: #ff6a00 !important; border-color: #e65c00 !important; color: #221000 !important; }
         .zhipu { background-color: #7c3aed !important; border-color: #6d28d9 !important; color: white !important; }
-        .microsoft { background-color: #00a4ef !important; border-color: #0078d4 !important; color: white !important; }
+        .microsoft { background-color: #00a4ef !important; border-color: #0078d4 !important; color: #061922 !important; }
         .moonshot { background-color: #e11d48 !important; border-color: #be123c !important; color: white !important; }
-        .cohere { background-color: #39d353 !important; border-color: #2da44e !important; color: white !important; }
-        .amazon { background-color: #ff9900 !important; border-color: #e68a00 !important; color: white !important; }
-        .bytedance { background-color: #0d9488 !important; border-color: #0f766e !important; color: white !important; }
+        .cohere { background-color: #39d353 !important; border-color: #2da44e !important; color: #071b0a !important; }
+        .amazon { background-color: #ff9900 !important; border-color: #e68a00 !important; color: #211400 !important; }
+        .bytedance { background-color: #0d9488 !important; border-color: #0f766e !important; color: #061715 !important; }
         .minimax { background-color: #c026d3 !important; border-color: #a21caf !important; color: white !important; }
         .other { background-color: #6b7280 !important; border-color: #4b5563 !important; color: white !important; }
 
@@ -134,15 +393,49 @@
             color: #64748b;
             font-size: 0.85rem;
         }
+
+        @media (max-width: 700px) {
+            h1 { font-size: 2rem; }
+            header { padding-top: 2rem; }
+            .summary-grid,
+            .provider-grid { grid-template-columns: 1fr; }
+            #timeline { height: 650px; }
+        }
     </style>
 </head>
 <body>
     <header>
-        <h1>AI Language Models Timeline</h1>
-        <p class="subtitle">Major releases from 2020 to 2026</p>
+        <p class="eyebrow">Open AI release dataset</p>
+        <h1>AI Model Release Timeline</h1>
+        <p class="subtitle">Major artificial intelligence and LLM releases from 2020 to 2026</p>
+        <p class="intro">Track when important models from OpenAI, Anthropic, Google DeepMind, Meta, Mistral, xAI, DeepSeek and other AI labs were released.</p>
+        <nav class="header-links" aria-label="Page links">
+            <a href="#timeline">Explore timeline</a>
+            <a href="#about">About the data</a>
+            <a href="https://github.com/hitenjadeja/ai-models-timeframes">View source on GitHub</a>
+        </nav>
     </header>
 
-    <div class="legend">
+    <main>
+        <section class="summary-grid" aria-label="Timeline summary">
+            <div class="summary-card">
+                <strong id="model-count">382</strong>
+                <span>model releases</span>
+            </div>
+            <div class="summary-card">
+                <strong>16</strong>
+                <span>provider groups</span>
+            </div>
+            <div class="summary-card">
+                <strong>2020–2026</strong>
+                <span>release history</span>
+            </div>
+        </section>
+
+        <section aria-labelledby="timeline-heading">
+            <h2 id="timeline-heading" class="timeline-heading">Explore the AI model timeline</h2>
+
+    <div class="legend" aria-label="Filter by AI provider">
         <div class="legend-item" data-group="openai">
             <div class="legend-color" style="background: #10a37f;"></div>
             <span>OpenAI</span>
@@ -209,12 +502,60 @@
         </div>
     </div>
 
-    <p class="instructions">Click legend items to filter &bull; Scroll to zoom &bull; Drag to pan &bull; Click items for details</p>
+    <p class="instructions">Click legend items to filter &bull; Scroll to zoom &bull; Drag to pan &bull; Click releases for details</p>
 
-    <div id="timeline"></div>
+    <div id="timeline" role="region" aria-label="Interactive timeline of AI model release dates"></div>
+        </section>
+
+        <section id="about" class="content-card" aria-labelledby="about-heading">
+            <h2 id="about-heading">A chronological guide to major AI model releases</h2>
+            <p>This open timeline makes the recent history of artificial intelligence easier to explore. It currently contains 382 notable releases dated from January 2020 through August 2026, including large language models, reasoning models, multimodal systems, coding models, image and video generators, speech models and other foundation models.</p>
+            <p>Use the provider filters above to compare release activity across organisations, then zoom or pan to examine a particular period. Each timeline entry includes a release date and a concise description of the model or family.</p>
+
+            <div class="provider-grid" aria-label="Model families represented in the timeline">
+                <article>
+                    <h3>OpenAI and Anthropic</h3>
+                    <p>Follow the progression from GPT-3, ChatGPT and GPT-4 to the GPT-5 family, alongside Claude 1, Claude 2, Claude 3 and later Claude generations.</p>
+                </article>
+                <article>
+                    <h3>Google DeepMind and Meta</h3>
+                    <p>Compare the PaLM and Gemini release history with Meta’s Llama model family and its multimodal, reasoning and open-weight releases.</p>
+                </article>
+                <article>
+                    <h3>Mistral, xAI and DeepSeek</h3>
+                    <p>Track Mistral and Mixtral, the Grok family from xAI, and DeepSeek’s general-purpose, coding and reasoning model releases.</p>
+                </article>
+                <article>
+                    <h3>Global AI labs</h3>
+                    <p>Explore releases from Alibaba, Zhipu AI, Microsoft, Moonshot AI, Cohere, Amazon, ByteDance, MiniMax and many other research teams.</p>
+                </article>
+            </div>
+
+            <h2>How the timeline is compiled</h2>
+            <p>Release dates and model details are compiled from public announcements, official documentation and provider release notes. The dataset is updated regularly as important new models are announced. Corrections and well-sourced additions are welcome in the <a href="https://github.com/hitenjadeja/ai-models-timeframes">public GitHub repository</a>.</p>
+            <p>For machine-readable context, see the concise <a href="llms.txt">AI-system guide</a>, the <a href="sitemap.xml">XML sitemap</a>, and the embedded Dataset structured data in this page.</p>
+
+            <div id="faq" class="faq">
+                <h2>Frequently asked questions</h2>
+                <details>
+                    <summary>What is the AI Models Timeline?</summary>
+                    <p>It is a free interactive chronology of notable AI and large language model releases from 2020 through 2026, grouped by provider.</p>
+                </details>
+                <details>
+                    <summary>Which AI companies and model families are included?</summary>
+                    <p>The timeline covers models from OpenAI, Anthropic, Google DeepMind, Meta, Mistral AI, xAI, DeepSeek, Alibaba, Microsoft, Amazon, Cohere, ByteDance, MiniMax, Zhipu AI, Moonshot AI and other research organisations.</p>
+                </details>
+                <details>
+                    <summary>How often is the AI model timeline updated?</summary>
+                    <p>The timeline is updated regularly as notable models are announced. The latest revision date appears below and in the public GitHub repository.</p>
+                </details>
+            </div>
+        </section>
+    </main>
 
     <footer>
-        Data compiled from public announcements and documentation. Last updated: August 15, 2026.
+        <p>Data compiled from public announcements and documentation. Last updated: <time datetime="2026-08-16">August 16, 2026</time>.</p>
+        <p><a href="https://github.com/hitenjadeja/ai-models-timeframes">Source and contributions on GitHub</a></p>
     </footer>
 
     <script>
@@ -655,6 +996,7 @@
             { id: 421, content: 'LFM2.5-VL-3B', start: '2026-08-12', group: 'other', className: 'other', title: 'LFM2.5-VL-3B (Open on-device VLM, UI grounding and tool use) - Liquid AI\nAugust 12, 2026' }
         ];
 
+        document.getElementById('model-count').textContent = allItems.length;
         const items = new vis.DataSet(allItems);
 
         // Configuration options

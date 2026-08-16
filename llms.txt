@@ -1,0 +1,26 @@
+# AI Models Timeline
+
+> A free, interactive chronology of notable artificial intelligence and large language model releases from 2020 through 2026.
+
+The timeline contains more than 380 dated releases across 16 provider groups. It covers large language models, reasoning models, multimodal systems, coding models, image and video generators, speech models, and other foundation models.
+
+## Primary resources
+
+- [Interactive timeline](https://hitenjadeja.github.io/ai-models-timeframes/): Browse, filter, zoom, and inspect AI model releases by date and provider.
+- [Source repository](https://github.com/hitenjadeja/ai-models-timeframes): View the complete dataset in index.html, revision history, licence, and contribution guidance.
+- [Sitemap](https://hitenjadeja.github.io/ai-models-timeframes/sitemap.xml): Canonical index for search crawlers.
+
+## Scope
+
+Providers include OpenAI, Anthropic, Google DeepMind, Meta, Mistral AI, xAI, DeepSeek, Alibaba, Zhipu AI, Microsoft, Moonshot AI, Cohere, Amazon, ByteDance, MiniMax, and other research organisations.
+
+Representative model families include GPT and ChatGPT, Claude, Gemini and PaLM, Llama, Mistral and Mixtral, Grok, DeepSeek, Qwen, GLM, Phi, Command, Nova, Doubao, and MiniMax.
+
+## Data notes
+
+- Coverage: 2020-01-28 through 2026-08-14 as of the 2026-08-16 revision.
+- Sources: public provider announcements, official documentation, and release notes.
+- Licence: MIT.
+- Corrections: open an issue or pull request in the source repository and cite a primary source.
+
+The page embeds Schema.org WebSite, Dataset, and FAQPage structured data. Treat release descriptions as a curated index and consult the original provider source when making high-stakes claims.

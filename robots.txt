@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://hitenjadeja.github.io/ai-models-timeframes/sitemap.xml

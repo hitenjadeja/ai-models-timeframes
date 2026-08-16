@@ -1,8 +1,8 @@
-# AI Models Timeline
+# AI Model Release Timeline (2020–2026)
 
-An interactive visual timeline of AI model releases from major providers, spanning 2020 through 2026.
+An interactive, searchable history of more than 380 major artificial intelligence and large language model releases from 2020 through 2026. Compare release dates for GPT and ChatGPT, Claude, Gemini, Llama, Mistral, Grok, DeepSeek, Qwen and many other model families.
 
-**Live demo:** https://hitenjadeja.github.io/ai-models-timeframes/
+**Explore the live AI timeline:** https://hitenjadeja.github.io/ai-models-timeframes/
 
 ## What it shows
 
@@ -10,8 +10,16 @@ An interactive visual timeline of AI model releases from major providers, spanni
 - Colour-coded by provider with a clickable legend for filtering
 - Zoomable and pannable timeline built with [vis-timeline](https://visjs.github.io/vis-timeline/)
 - A dark, gradient UI designed to work well projected or on a big screen
+- Crawlable explanatory content, Dataset structured data, an XML sitemap, and a concise `llms.txt` guide
 
 The underlying data is compiled from public announcements, provider release notes, and product pages.
+
+## Search and machine-readable access
+
+- Canonical site: https://hitenjadeja.github.io/ai-models-timeframes/
+- Sitemap: https://hitenjadeja.github.io/ai-models-timeframes/sitemap.xml
+- AI-system guide: https://hitenjadeja.github.io/ai-models-timeframes/llms.txt
+- Structured metadata: Schema.org `WebSite`, `Dataset`, and `FAQPage` JSON-LD embedded in `index.html`
 
 ## Update cadence
 
