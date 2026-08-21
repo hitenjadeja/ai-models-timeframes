@@ -544,7 +544,7 @@
     </main>
 
     <footer>
-        <p>Data compiled from public announcements and documentation. Last updated: <time datetime="2026-08-16">August 16, 2026</time>.</p>
+        <p>Data compiled from public announcements and documentation. Last updated: <time datetime="2026-08-22">August 22, 2026</time>.</p>
         <p><a href="https://github.com/hitenjadeja/ai-models-timeframes">Source and contributions on GitHub</a></p>
     </footer>
 
@@ -810,6 +810,7 @@
             { id: 385, content: 'Qwen-Image-3.0', start: '2026-07-21', group: 'alibaba', className: 'alibaba', title: 'Qwen-Image-3.0 (4.5K-token prompts, native 12-language text rendering)\nJuly 21, 2026' },
             { id: 399, content: 'Qwen3.7-Flash', start: '2026-07-25', group: 'alibaba', className: 'alibaba', title: 'Qwen3.7-Flash (Native vision-language model, 1M context)\nJuly 25, 2026' },
             { id: 416, content: 'Qwen3.8-Max', start: '2026-08-03', group: 'alibaba', className: 'alibaba', title: 'Qwen3.8-Max (2.4T/95B-active MoE API flagship, 1M context)\nAugust 3, 2026' },
+            { id: 422, content: 'Qwen3.8-2.4T-A95B', start: '2026-08-12', group: 'alibaba', className: 'alibaba', title: 'Qwen3.8-2.4T-A95B (Open 2.4T/95B-active MoE, thinking-only)\nAugust 12, 2026' },
             { id: 417, content: 'Qwen3.8-27B', start: '2026-08-14', group: 'alibaba', className: 'alibaba', title: 'Qwen3.8-27B (Dense open-weight model, Apache 2.0)\nAugust 14, 2026' },
 
             // Zhipu / Z.ai (2023-2026)
@@ -983,7 +984,14 @@
             { id: 406, content: 'LFM2.5-Encoder-230M', start: '2026-07-28', group: 'other', className: 'other', title: 'LFM2.5-Encoder-230M (Multilingual long-context encoder) - Liquid AI\nJuly 28, 2026' },
             { id: 407, content: 'LFM2.5-Encoder-350M', start: '2026-07-28', group: 'other', className: 'other', title: 'LFM2.5-Encoder-350M (Multilingual retrieval and reranking encoder) - Liquid AI\nJuly 28, 2026' },
             { id: 408, content: 'LFM2.5-2.6B', start: '2026-08-04', group: 'other', className: 'other', title: 'LFM2.5-2.6B (Open on-device agentic model, 128K context) - Liquid AI\nAugust 4, 2026' },
-            { id: 421, content: 'LFM2.5-VL-3B', start: '2026-08-12', group: 'other', className: 'other', title: 'LFM2.5-VL-3B (Open on-device VLM, UI grounding and tool use) - Liquid AI\nAugust 12, 2026' }
+            { id: 423, content: 'Nemotron 3.5 Lightning', start: '2026-08-11', group: 'other', className: 'other', title: 'Nemotron 3.5 Lightning (Open 30B/3B-active hybrid MoE agentic model) - NVIDIA\nAugust 11, 2026' },
+            { id: 424, content: 'Solar Pro 4', start: '2026-08-11', group: 'other', className: 'other', title: 'Solar Pro 4 (Agentic reasoning, 512K context, 128K output) - Upstage\nAugust 11, 2026' },
+            { id: 421, content: 'LFM2.5-VL-3B', start: '2026-08-12', group: 'other', className: 'other', title: 'LFM2.5-VL-3B (Open on-device VLM, UI grounding and tool use) - Liquid AI\nAugust 12, 2026' },
+            { id: 425, content: 'Toast 1', start: '2026-08-13', group: 'other', className: 'other', title: 'Toast 1 (Specialized deep-search model and agent, 131K context) - Mixedbread\nAugust 13, 2026' },
+            { id: 426, content: 'dots3-note Preview', start: '2026-08-14', group: 'other', className: 'other', title: 'dots3-note Preview (Open 280B/16B-active multimodal MoE, 512K context) - Dots Studio\nAugust 14, 2026' },
+            { id: 427, content: 'Nemotron Labs Teacher', start: '2026-08-14', group: 'other', className: 'other', title: 'Nemotron Labs Teacher (Five open 550B/55B-active specialist checkpoints) - NVIDIA\nAugust 14, 2026' },
+            { id: 428, content: 'Sonic-3.6', start: '2026-08-17', group: 'other', className: 'other', title: 'Sonic-3.6 (Streaming TTS beta, 44 languages) - Cartesia\nAugust 17, 2026' },
+            { id: 429, content: 'Ornith-1.5', start: '2026-08-19', group: 'other', className: 'other', title: 'Ornith-1.5 (Open agentic coding family: 9B, 35B MoE and 397B MoE) - Ornith\nAugust 19, 2026' }
         ];
 
         document.getElementById('model-count').textContent = allItems.length;
@@ -992,9 +1000,9 @@
         // Configuration options
         const options = {
             start: '2026-04-09',
-            end: '2026-08-14',
+            end: '2026-08-19',
             min: '2019-01-01',
-            max: '2026-11-15',
+            max: '2026-11-20',
             zoomMin: 1000 * 60 * 60 * 24 * 30 * 3, // 3 months
             zoomMax: 1000 * 60 * 60 * 24 * 365 * 7, // 7 years
             orientation: 'top',
