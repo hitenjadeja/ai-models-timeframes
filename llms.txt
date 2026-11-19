@@ -6,7 +6,7 @@ The timeline contains 587 dated releases across 16 provider groups. It covers la
 
 ## Primary resources
 
-- [Interactive timeline](https://hitenjadeja.github.io/ai-models-timeframes/): Browse, filter, zoom, and inspect AI model releases by date and provider.
+- [Interactive timeline](https://hitenjadeja.github.io/ai-models-timeframes/): Browse monthly releases and filter by provider, region, and model access.
 - [Source repository](https://github.com/hitenjadeja/ai-models-timeframes): View the complete dataset in index.html, revision history, licence, and contribution guidance.
 - [Sitemap](https://hitenjadeja.github.io/ai-models-timeframes/sitemap.xml): Canonical index for search crawlers.
 

@@ -7,9 +7,8 @@ An interactive, searchable history of more than 380 major artificial intelligenc
 ## What it shows
 
 - Release dates for frontier and notable models from OpenAI, Anthropic, Google DeepMind, Meta, Mistral, xAI, Alibaba, DeepSeek, and many more
-- Colour-coded by provider with a clickable legend for filtering
-- Zoomable and pannable timeline built with [vis-timeline](https://visjs.github.io/vis-timeline/)
-- A dark, gradient UI designed to work well projected or on a big screen
+- A monthly release list with inline details and a clickable activity chart
+- Filters for provider combinations, region, model weights and open-source licences
 - Crawlable explanatory content, Dataset structured data, an XML sitemap, and a concise `llms.txt` guide
 
 The underlying data is compiled from public announcements, provider release notes, and product pages.
@@ -53,7 +52,7 @@ GitHub Pages will serve this straight from your fork:
 
 The timeline data lives as a JavaScript array inside `index.html`. There are two ways to refresh it:
 
-**Manual edit.** Open `index.html`, find the `items` array near the bottom of the `<script>` block, and add, edit, or remove entries. Each entry uses the shape `{ id, content, start, group }` where `group` corresponds to a provider. Commit and push; GitHub Pages will redeploy automatically.
+**Manual edit.** Open `index.html`, find the `allItems` array near the bottom of the `<script>` block, and add, edit, or remove entries. Each entry uses the shape `{ id, content, start, group, title, access }` where `group` corresponds to a provider and `access` is `open`, `closed` or `unknown`. Add `openLicense: true` for a documented open-source licence. Commit and push; GitHub Pages will redeploy automatically.
 
 **With Claude Code.** This repo ships with a custom skill at `.claude/skills/update-models/SKILL.md`. Inside Claude Code, run `/update-models` and it will guide you through researching recent releases across providers and producing a clean commit.
 
