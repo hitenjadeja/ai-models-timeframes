@@ -2,7 +2,7 @@
 
 > A free, interactive chronology of notable artificial intelligence and large language model releases from 2020 through 2026.
 
-The timeline contains 587 dated releases across 16 provider groups. It covers large language models, reasoning models, multimodal systems, coding models, image and video generators, speech models, and other foundation models.
+The timeline contains 599 dated releases across 16 provider groups. It covers large language models, reasoning models, multimodal systems, coding models, image and video generators, speech models, and other foundation models.
 
 ## Primary resources
 
@@ -18,7 +18,7 @@ Representative model families include GPT and ChatGPT, Claude, Gemini and PaLM, 
 
 ## Data notes
 
-- Coverage: 2020-01-28 through 2026-11-19 as of the 2026-11-19 revision.
+- Coverage: 2020-01-28 through 2026-11-20 as of the 2026-11-20 revision.
 - Sources: public provider announcements, official documentation, and release notes.
 - Licence: MIT.
 - Corrections: open an issue or pull request in the source repository and cite a primary source.
